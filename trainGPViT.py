@@ -15,9 +15,6 @@ from sklearn.metrics import confusion_matrix
 import scipy.io
 from tensorflow.keras.callbacks import *
 
-from keras_cv_attention_models import gpvit
-
-
 K.clear_session()
 
 
@@ -45,7 +42,7 @@ y_test = y_test-1
 y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
 
-mobile = gpvit.GPViT_L2()
+mobile = GPViT_L2()
 
 
 # mobile.summary()
