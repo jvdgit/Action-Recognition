@@ -12,8 +12,6 @@ import scipy.io
 from tensorflow.keras.callbacks import *
 from tensorflow.python.keras.backend import eager_learning_phase_scope
 
-from keras_cv_attention_models import visualizing, gpvit
-
 from PIL import Image
 import glob
 
@@ -46,7 +44,7 @@ y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
 
 
-mobile = gpvit.GPViT_L2()
+mobile = GPViT_L2()
 
 #mobile.summary()
 x = mobile.layers[-2].output
@@ -64,7 +62,7 @@ model = Model(inputs=mobile.input, outputs=predictions)
 model.load_weights(fname)
 
 get_last_layer_output = K.function([model.layers[0].input],
-                                  [model.layers[-3].output])
+                                  [model.layers[-2].output])
 
 trainFeatures = np.zeros((len(x_train), 512))
 
