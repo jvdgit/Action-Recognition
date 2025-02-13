@@ -19,9 +19,6 @@ import os
 from tensorflow.keras.optimizers import SGD, RMSprop
 from tensorflow.keras.layers import BatchNormalization
 
-from keras_multi_head import MultiHeadAttention
-from tensorflow.keras.layers import MultiHeadAttention
-
 np.random.seed(7)
 
 #mat = scipy.io.loadmat('gyro_truncated_norm.mat')
